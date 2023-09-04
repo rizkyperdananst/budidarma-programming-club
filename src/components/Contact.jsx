@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <div className="p-20" id="contact">
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1 max-sm:grid-cols-1">
         <div>
           <h2 className="text-3xl font-bold mb-3">Kontak Kami</h2>
           <p className="text-md mb-2">
