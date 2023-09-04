@@ -4,7 +4,7 @@ const Services = () => {
     return (
         <div className="p-20 bg-slate-50" id="services">
             <h1 className="text-center text-3xl font-medium">Layanan Kami</h1>
-            <div className="grid grid-cols-4 gap-4 mt-5">
+            <div className="grid grid-cols-4 justify-center content-center gap-4 mt-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
                 <div className="border border-dark p-4 rounded-md hover:scale-105 transition cursor-pointer">
                     <img src={AboutImage} alt="Layanan 1" />
                     <h3 className="text-lg font-medium mt-3 mb-2">Web Dasar I</h3>
