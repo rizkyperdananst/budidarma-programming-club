@@ -1,21 +1,68 @@
-import React from "react";
+import React, { useState } from 'react';
 
-const Navbar = () => {
-    return (
-        <div className="container-none relative">
-            <nav className="flex flex-row flex-wrap justify-between bg-stone-50 w-full p-2 fixed top-0 left-0 right-0">
-                <a href="#" className="p-2">
-                    <h3 className="text-2xl font-medium">Budidarma Programming Club</h3>
-                </a>
-                <div className="flex flex-row flex-wrap max-sm:hidden">
-                    <a href="#home" className="p-2">Home</a>
-                    <a href="#services" className="p-2">Services</a>
-                    <a href="#about" className="p-2">About</a>
-                    <a href="#contact" className="p-2">Contact</a>
-                </div>
-            </nav>
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <nav className="bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <a href="#" className="text-white text-2xl font-bold">BPC</a>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              <a href="#home" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+              <a href="#about" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+              <a href="#services" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+              <a href="#contact" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            </div>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={toggleNavbar}
+              className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-expanded={isOpen}
+            >
+              <span className="sr-only">Toggle navigation</span>
+              <svg
+                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg
+                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
-    )
+      </div>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#home" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="#about" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="#services" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+          <a href="#contact" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
