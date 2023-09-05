@@ -32,7 +32,7 @@ const Contact = () => {
           <form>
             <div className="mb-3">
               <label htmlFor="name" className="block mb-2">
-                Nama :
+                Name :
               </label>
               <input type="text" className="p-2 border border-slate-500 w-full rounded-md focus:outline-none focus:invalid:border-red-500 focus:valid:border-green-500" id="name" placeholder="Your Name" minLength={3} maxLength={30} required/>
             </div>
@@ -44,7 +44,7 @@ const Contact = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="message" className="block mb-2">
-                Pesan :
+                Message :
               </label>
               <textarea
                 className="p-2 border border-slate-500 w-full rounded-md focus:outline-none"
