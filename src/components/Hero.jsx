@@ -3,7 +3,7 @@ import { Fragment } from "react";
 const Hero = () => {
   return (
     <div
-      className="flex flex-col justify-center items-center text-center mt-10 "
+      className="flex flex-col justify-center items-center text-center mt-10 max-md:p-5 max-sm:p-2"
       id="home"
     >
       <h1 className="text-5xl mt-10 text-slate-600">
